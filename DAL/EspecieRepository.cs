@@ -75,6 +75,35 @@ namespace DAL
             }
         }
 
+        public string Modificar(Especie especie)
+        {
+            try
+            {
+                var lista = Consultar();
+                var especieExistente = lista.FirstOrDefault(e => e.Id == especie.Id);
+                if (especieExistente == null)
+                {
+                    return "No se encontró la especie para modificar.";
+                }
+
+                especieExistente.Nombre = especie.Nombre;
+
+                using (StreamWriter sw = new StreamWriter(ruta, false))
+                {
+                    foreach (var item in lista)
+                    {
+                        sw.WriteLine($"{item.Id};{item.Nombre}");
+                    }
+                }
+
+                return "Especie modificada correctamente.";
+            }
+            catch (Exception ex)
+            {
+                return $"Error al modificar la especie: {ex.Message}";
+            }
+        }
+
     }
 
 }

@@ -302,5 +302,39 @@ namespace GUI
             txtNombre.ReadOnly = true;
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (lstEspecies.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione una especie de la lista.");
+                return;
+            }
+
+            // Obtener la especie seleccionada
+            Especie especieSeleccionada = (Especie)lstEspecies.SelectedItem;
+
+            // Mostrar un cuadro de diálogo para ingresar el nuevo nombre
+            string nuevoNombre = Microsoft.VisualBasic.Interaction.InputBox(
+                $"Ingrese el nuevo nombre para la especie \"{especieSeleccionada.Nombre}\"",
+                "Editar Nombre de Especie",
+                especieSeleccionada.Nombre); // Poner el nombre actual como valor por defecto
+
+            // Si el nuevo nombre no es vacío, lo actualizamos
+            if (!string.IsNullOrWhiteSpace(nuevoNombre) && nuevoNombre != especieSeleccionada.Nombre)
+            {
+                especieSeleccionada.Nombre = nuevoNombre;
+
+                var mensaje = serviceEspecie.Modificar(especieSeleccionada);
+                MessageBox.Show(mensaje);
+                CargarListaEspecies(); // Recargar la lista para reflejar los cambios
+            }
+            else
+            {
+                MessageBox.Show("El nombre no ha sido modificado o es inválido.");
+            }
+        }
+
+
     }
 }

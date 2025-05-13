@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System;
+
+namespace GUI
 {
     partial class Frm_Especie
     {
@@ -18,6 +20,7 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.panelList = new System.Windows.Forms.Panel();
             this.lstEspecies = new System.Windows.Forms.ListBox();
@@ -25,6 +28,7 @@
             this.panelForm = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -32,8 +36,7 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelList.SuspendLayout();
             this.panelForm.SuspendLayout();
@@ -42,6 +45,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.SystemColors.Control;
+            this.panelMain.Controls.Add(this.btnModificar);
             this.panelMain.Controls.Add(this.btnEliminar);
             this.panelMain.Controls.Add(this.BtnSalir);
             this.panelMain.Controls.Add(this.panelList);
@@ -52,6 +56,21 @@
             this.panelMain.Size = new System.Drawing.Size(646, 480);
             this.panelMain.TabIndex = 0;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint_1);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Image = global::GUI.Properties.Resources.delete;
+            this.btnEliminar.Location = new System.Drawing.Point(396, 415);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(52, 30);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // BtnSalir
             // 
@@ -146,6 +165,23 @@
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(180)))), ((int)(((byte)(60)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Image = global::GUI.Properties.Resources.guardar;
+            this.btnGuardar.Location = new System.Drawing.Point(256, 219);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(47, 30);
+            this.btnGuardar.TabIndex = 1;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.MouseEnter += new System.EventHandler(this.btnGuardar_MouseEnter);
+            this.btnGuardar.MouseLeave += new System.EventHandler(this.btnGuardar_MouseLeave);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
@@ -227,37 +263,20 @@
             this.panelButtons.Size = new System.Drawing.Size(53, 59);
             this.panelButtons.TabIndex = 2;
             // 
-            // btnEliminar
+            // btnModificar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = global::GUI.Properties.Resources.delete;
-            this.btnEliminar.Location = new System.Drawing.Point(396, 415);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(52, 30);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(180)))), ((int)(((byte)(60)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Image = global::GUI.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(256, 219);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(47, 30);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            this.btnGuardar.MouseEnter += new System.EventHandler(this.btnGuardar_MouseEnter);
-            this.btnGuardar.MouseLeave += new System.EventHandler(this.btnGuardar_MouseLeave);
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(120)))), ((int)(((byte)(200)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(140, 415);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 30);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // Frm_Especie
             // 
@@ -282,6 +301,11 @@
 
         }
 
+        //private void btnModificar_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         #endregion
 
         private System.Windows.Forms.Panel panelMain;
@@ -301,5 +325,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
