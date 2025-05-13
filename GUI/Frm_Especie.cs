@@ -28,11 +28,26 @@ namespace GUI
 
         private void Guardar(Especie especie)
         {
-            // validar  nulos y demas
-           var mensaje= serviceEspecie.Guardar(especie);
+            if (string.IsNullOrWhiteSpace(especie.Nombre))
+            {
+                MessageBox.Show("El nombre de la especie no puede estar vacío.");
+                return;
+            }
+
+            // Validación de nombre repetido
+            var especieExistente = ((EspecieService)serviceEspecie).BuscarPorNombre(especie.Nombre);
+            if (especieExistente != null)
+            {
+                MessageBox.Show("Ya existe una especie con ese nombre.");
+                return;
+            }
+
+            var mensaje = serviceEspecie.Guardar(especie);
             MessageBox.Show(mensaje);
             CargarListaEspecies();
+            Nuevo();
         }
+
 
         private void CargarListaEspecies()
         {
@@ -43,6 +58,7 @@ namespace GUI
         private void Frm_Especie_Load(object sender, EventArgs e)
         {
             CargarListaEspecies();
+            ActivarNombre_btnGuardar();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -86,13 +102,28 @@ namespace GUI
 
         private void VerEspecie(Especie especie)
         {
-            if (especie==null)
+            if (especie == null)
             {
+                ActivarNombre_btnGuardar();
                 return;
             }
-            txtId.Text = especie.Id.ToString();
-            txtNombre.Text = especie.Nombre;
+            else
+            {
+                txtId.Text = especie.Id.ToString();
+                txtNombre.Text = especie.Nombre;
+                txtNombre.ReadOnly = true;
+                txtNombre.Enabled = false;
+                btnGuardar.Enabled = false;
+            }
         }
+
+        private void ActivarNombre_btnGuardar()
+        {
+            txtNombre.Enabled = true;
+            txtNombre.ReadOnly = false;
+            btnGuardar.Enabled = true;
+        }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -104,6 +135,7 @@ namespace GUI
             txtId.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtId.Focus();
+            txtId.ReadOnly = false;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -130,19 +162,20 @@ namespace GUI
             }
         }
 
-        private void txtId_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
+        //private void txtNombre_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    txtId.Focus();
+        //}
 
-        private void txtId_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
+        //private void txtId_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    txtNombre.Focus();
+        //}
 
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsNumber(e.KeyChar))
+            // Permitir números y teclas de control como Backspace
+            if (char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
             }
@@ -151,6 +184,7 @@ namespace GUI
                 e.Handled = true;
             }
         }
+
 
         private void btnGuardar_MouseEnter(object sender, EventArgs e)
         {
@@ -174,6 +208,7 @@ namespace GUI
                 else
                 {
                     txtNombre.Text = "";
+                    ActivarNombre_btnGuardar();
                 }
                 
             }
@@ -196,6 +231,75 @@ namespace GUI
 
         private void panelMain_Paint_1(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Especie especie = null;
+
+            // Si hay un ID válido en el textbox, úsalo.
+            if (int.TryParse(txtId.Text, out int id) && id > 0)
+            {
+                especie = serviceEspecie.BuscarId(id);
+            }
+            // Si no hay un ID válido, intenta usar la selección del listbox
+            else if (lstEspecies.SelectedItem is Especie seleccionada)
+            {
+                especie = seleccionada;
+            }
+
+            if (especie == null)
+            {
+                MessageBox.Show("Seleccione una especie válida para eliminar.");
+                return;
+            }
+
+            var confirmResult = MessageBox.Show(
+                $"¿Está seguro que desea eliminar la especie \"{especie.Nombre}\"?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                var mensaje = serviceEspecie.Eliminar(especie.Id);
+                MessageBox.Show(mensaje);
+                CargarListaEspecies();
+                Nuevo();
+            }
+        }
+
+        private void lstEspecies_DoubleClick(object sender, EventArgs e)
+        {
+            if (lstEspecies.SelectedItem is Especie especie)
+            {
+                var confirmResult = MessageBox.Show(
+                    $"¿Desea eliminar la especie \"{especie.Nombre}\"?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    var mensaje = serviceEspecie.Eliminar(especie.Id);
+                    MessageBox.Show(mensaje);
+                    CargarListaEspecies();
+                    Nuevo();
+                }
+            }
+        }
+
+        private void lstEspecies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstEspecies.SelectedItem is Especie especie)
+            {
+                txtId.Text = especie.Id.ToString();
+                txtNombre.Text = especie.Nombre;
+            }
+            btnGuardar.Enabled = false;
+            txtNombre.Enabled = false;
+            txtNombre.ReadOnly = true;
 
         }
     }

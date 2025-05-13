@@ -17,11 +17,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void Loby_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void OpenChildForm(Form childform)
         {
             childform.TopLevel = false;
@@ -32,10 +27,10 @@ namespace GUI
             childform.Show();
             
         }
-        private void AbrirFormulario(Form frm)
+
+        public void Loby_Load(object sender, EventArgs e)
         {
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.ShowDialog();
+           
         }
 
         private void btnEspecies_Click(object sender, EventArgs e)

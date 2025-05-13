@@ -78,6 +78,13 @@ namespace BLL
             var especieBuscada = Consultar().FirstOrDefault<Especie>(x => x.Id == id);
             return especieBuscada;
         }
+
+        public Especie BuscarPorNombre(string nombre)
+        {
+            return Consultar().FirstOrDefault(e =>
+                e.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase));
+        }
+
     }
 
 }

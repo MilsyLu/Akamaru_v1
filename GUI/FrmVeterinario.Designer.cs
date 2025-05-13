@@ -72,7 +72,7 @@
             this.txtEspecialidad.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtEspecialidad.Location = new System.Drawing.Point(120, 150);
             this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(150, 29);
+            this.txtEspecialidad.Size = new System.Drawing.Size(150, 25);
             this.txtEspecialidad.TabIndex = 6;
             // 
             // label3
@@ -81,7 +81,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(7, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 23);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Especialidad:";
             // 
@@ -91,7 +91,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtNombre.Location = new System.Drawing.Point(120, 100);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(150, 29);
+            this.txtNombre.Size = new System.Drawing.Size(150, 25);
             this.txtNombre.TabIndex = 3;
             // 
             // label2
@@ -100,7 +100,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(30, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 23);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre:";
             // 
@@ -110,7 +110,7 @@
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.txtId.Location = new System.Drawing.Point(120, 50);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(150, 29);
+            this.txtId.Size = new System.Drawing.Size(150, 25);
             this.txtId.TabIndex = 1;
             // 
             // label1
@@ -119,7 +119,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(38, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 23);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
             // 
@@ -139,10 +139,10 @@
             this.lstVeterinarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstVeterinarios.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.lstVeterinarios.FormattingEnabled = true;
-            this.lstVeterinarios.ItemHeight = 21;
+            this.lstVeterinarios.ItemHeight = 17;
             this.lstVeterinarios.Location = new System.Drawing.Point(20, 50);
             this.lstVeterinarios.Name = "lstVeterinarios";
-            this.lstVeterinarios.Size = new System.Drawing.Size(260, 210);
+            this.lstVeterinarios.Size = new System.Drawing.Size(260, 204);
             this.lstVeterinarios.TabIndex = 4;
             // 
             // label4
@@ -151,7 +151,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(20, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 25);
+            this.label4.Size = new System.Drawing.Size(164, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Listado de Veterinarios";
             // 
@@ -213,7 +213,7 @@
             // 
             // FrmVeterinario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 400);
             this.Controls.Add(this.panelContenedor);

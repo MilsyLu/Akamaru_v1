@@ -44,6 +44,37 @@ namespace DAL
             especie.Nombre = datos.Split(';')[1];
             return especie;
         }
+
+        public string Eliminar(int id)
+        {
+            try
+            {
+                var lista = Consultar();
+                var especie = lista.FirstOrDefault(e => e.Id == id);
+
+                if (especie == null)
+                {
+                    return "La especie no existe.";
+                }
+
+                lista.Remove(especie);
+
+                using (StreamWriter sw = new StreamWriter(ruta, false))
+                {
+                    foreach (var item in lista)
+                    {
+                        sw.WriteLine($"{item.Id};{item.Nombre}");
+                    }
+                }
+
+                return "Especie eliminada correctamente.";
+            }
+            catch (Exception ex)
+            {
+                return $"Error al eliminar la especie: {ex.Message}";
+            }
+        }
+
     }
 
 }
