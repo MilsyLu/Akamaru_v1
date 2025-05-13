@@ -10,11 +10,12 @@ namespace BLL
 {
     public class EspecieService : IService<Especie>
     {
-        private readonly EspecieRepository repoEspecie;
+        private readonly IRepository<Especie> repoEspecie;
+
 
         public EspecieService()
         {
-            repoEspecie = new EspecieRepository(Archivos.ARC_ESPECIE);
+            repoEspecie = new EspecieDbRepository();
         }
 
         public List<Especie> Consultar()

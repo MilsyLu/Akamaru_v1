@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Archivos.cs" />
     <Compile Include="ConsultaVeterinariaRepository.cs" />
+    <Compile Include="DbContext.cs" />
+    <Compile Include="EspecieDbRepository.cs" />
     <Compile Include="EspecieRepository.cs" />
     <Compile Include="FileRepository.cs" />
     <Compile Include="IRepository.cs" />
