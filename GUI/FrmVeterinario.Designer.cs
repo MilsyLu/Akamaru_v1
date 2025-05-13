@@ -32,6 +32,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelContenedor.SuspendLayout();
             this.panelFormulario.SuspendLayout();
             this.panelListado.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             this.panelFormulario.BackColor = System.Drawing.Color.White;
             this.panelFormulario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFormulario.Controls.Add(this.label5);
             this.panelFormulario.Controls.Add(this.txtEspecialidad);
             this.panelFormulario.Controls.Add(this.label3);
             this.panelFormulario.Controls.Add(this.txtNombre);
@@ -70,18 +72,18 @@
             // 
             this.txtEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEspecialidad.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtEspecialidad.Location = new System.Drawing.Point(120, 150);
+            this.txtEspecialidad.Location = new System.Drawing.Point(120, 189);
             this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(150, 25);
+            this.txtEspecialidad.Size = new System.Drawing.Size(150, 29);
             this.txtEspecialidad.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(7, 152);
+            this.label3.Location = new System.Drawing.Point(7, 191);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.Size = new System.Drawing.Size(107, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Especialidad:";
             // 
@@ -89,18 +91,18 @@
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtNombre.Location = new System.Drawing.Point(120, 100);
+            this.txtNombre.Location = new System.Drawing.Point(120, 140);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(150, 25);
+            this.txtNombre.Size = new System.Drawing.Size(150, 29);
             this.txtNombre.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(30, 103);
+            this.label2.Location = new System.Drawing.Point(21, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
+            this.label2.Size = new System.Drawing.Size(77, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre:";
             // 
@@ -108,18 +110,18 @@
             // 
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtId.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtId.Location = new System.Drawing.Point(120, 50);
+            this.txtId.Location = new System.Drawing.Point(120, 88);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(150, 25);
+            this.txtId.Size = new System.Drawing.Size(150, 29);
             this.txtId.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(38, 52);
+            this.label1.Location = new System.Drawing.Point(21, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(69, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
             // 
@@ -139,10 +141,10 @@
             this.lstVeterinarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstVeterinarios.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.lstVeterinarios.FormattingEnabled = true;
-            this.lstVeterinarios.ItemHeight = 17;
+            this.lstVeterinarios.ItemHeight = 21;
             this.lstVeterinarios.Location = new System.Drawing.Point(20, 50);
             this.lstVeterinarios.Name = "lstVeterinarios";
-            this.lstVeterinarios.Size = new System.Drawing.Size(260, 204);
+            this.lstVeterinarios.Size = new System.Drawing.Size(260, 189);
             this.lstVeterinarios.TabIndex = 4;
             // 
             // label4
@@ -151,7 +153,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(20, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 20);
+            this.label4.Size = new System.Drawing.Size(206, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Listado de Veterinarios";
             // 
@@ -211,9 +213,19 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(20, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(214, 25);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Registro de veterinarios\r\n";
+            // 
             // FrmVeterinario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 400);
             this.Controls.Add(this.panelContenedor);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label5;
     }
 }

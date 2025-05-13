@@ -59,5 +59,7 @@ namespace GUI
             var listaConsultas = serviceConsulta.ConsultarPorMascota(mascotaId);
             dgvConsultas.DataSource = listaConsultas;
         }
+
+
     }
 }
