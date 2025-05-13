@@ -183,5 +183,20 @@ namespace GUI
             }
             
         }
+
+        private void panelList_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
