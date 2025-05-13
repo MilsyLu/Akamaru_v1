@@ -135,5 +135,17 @@ namespace GUI
         {
             btnGuardar.Focus();
         }
+
+        private void btnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = Color.FromArgb(80, 200, 80); // Verde más claro al pasar el mouse
+            btnGuardar.Cursor = Cursors.Hand; // Cambia el cursor a mano
+        }
+
+        private void btnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = Color.FromArgb(60, 180, 60); // Verde original
+            btnGuardar.Cursor = Cursors.Default; // Vuelve al cursor normal
+        }
     }
 }
