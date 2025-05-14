@@ -10,11 +10,11 @@ namespace BLL
 {
     public class VeterinarioService : IService<Veterinario>
     {
-        private readonly VeterinarioRepository repoVeterinario;
+        private readonly IRepository<Veterinario> repoVeterinario;
 
         public VeterinarioService()
         {
-            repoVeterinario = new VeterinarioRepository(Archivos.ARC_VETERINARIO);
+            repoVeterinario = new VeterinarioDbRepository();
         }
 
         public List<Veterinario> Consultar()
