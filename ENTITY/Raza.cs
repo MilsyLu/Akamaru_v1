@@ -20,7 +20,8 @@ namespace ENTITY
 
         public override string ToString()
         {
-            return $"{Id};{Nombre};{Especie.Id}";
+            return $"{Id};{Nombre};{(Especie?.Id.ToString() ?? "SinEspecie")}";
         }
+
     }
 }

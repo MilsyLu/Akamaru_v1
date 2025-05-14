@@ -56,6 +56,7 @@
     <Compile Include="MascotaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropietarioRepository.cs" />
+    <Compile Include="RazaDbRepository.cs" />
     <Compile Include="RazaRepository.cs" />
     <Compile Include="VeterinarioDbRepository.cs" />
     <Compile Include="VeterinarioRepository.cs" />

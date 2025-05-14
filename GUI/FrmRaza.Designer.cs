@@ -19,6 +19,7 @@
         {
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbEspecies = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -34,7 +35,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelForm.SuspendLayout();
             this.panelList.SuspendLayout();
@@ -52,7 +52,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(15);
-            this.panelMain.Size = new System.Drawing.Size(782, 403);
+            this.panelMain.Size = new System.Drawing.Size(784, 411);
             this.panelMain.TabIndex = 0;
             // 
             // panelForm
@@ -71,6 +71,16 @@
             this.panelForm.Size = new System.Drawing.Size(314, 264);
             this.panelForm.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(17, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Registro de razas";
+            // 
             // cbEspecies
             // 
             this.cbEspecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -78,7 +88,7 @@
             this.cbEspecies.FormattingEnabled = true;
             this.cbEspecies.Location = new System.Drawing.Point(123, 180);
             this.cbEspecies.Name = "cbEspecies";
-            this.cbEspecies.Size = new System.Drawing.Size(180, 29);
+            this.cbEspecies.Size = new System.Drawing.Size(180, 25);
             this.cbEspecies.TabIndex = 6;
             // 
             // label3
@@ -87,7 +97,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(3, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 21);
+            this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Especie:";
             // 
@@ -97,7 +107,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtNombre.Location = new System.Drawing.Point(123, 120);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(180, 29);
+            this.txtNombre.Size = new System.Drawing.Size(180, 24);
             this.txtNombre.TabIndex = 3;
             // 
             // label2
@@ -106,7 +116,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(3, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 21);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre Raza:";
             // 
@@ -117,7 +127,7 @@
             this.txtId.Location = new System.Drawing.Point(123, 61);
             this.txtId.MaxLength = 4;
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(180, 29);
+            this.txtId.Size = new System.Drawing.Size(180, 24);
             this.txtId.TabIndex = 1;
             this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
@@ -127,7 +137,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(3, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 21);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
             // 
@@ -147,10 +157,10 @@
             this.lstRazas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstRazas.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lstRazas.FormattingEnabled = true;
-            this.lstRazas.ItemHeight = 20;
+            this.lstRazas.ItemHeight = 15;
             this.lstRazas.Location = new System.Drawing.Point(3, 43);
             this.lstRazas.Name = "lstRazas";
-            this.lstRazas.Size = new System.Drawing.Size(273, 200);
+            this.lstRazas.Size = new System.Drawing.Size(273, 195);
             this.lstRazas.TabIndex = 4;
             // 
             // label4
@@ -159,7 +169,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(15, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 25);
+            this.label4.Size = new System.Drawing.Size(120, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Listado de Razas";
             // 
@@ -250,21 +260,11 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(17, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Registro de razas";
-            // 
             // FrmRaza
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 403);
+            this.ClientSize = new System.Drawing.Size(784, 411);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MinimumSize = new System.Drawing.Size(800, 450);

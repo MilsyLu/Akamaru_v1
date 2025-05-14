@@ -17,3 +17,6 @@ obj/
 
 # Archivos de dependencias 
 packages/
+
+# Ignorar archivo de conexión local
+**/DbContext.cs

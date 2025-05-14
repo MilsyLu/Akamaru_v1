@@ -44,20 +44,20 @@ namespace GUI
 
         }
 
-        private void CargarGrillaRazas2()
-        {
-            var listaRazas = serviceRaza.ConsultarDTO();
-            grillaPrueba.DataSource = listaRazas;
+        //private void CargarGrillaRazas2()
+        //{
+        //    var listaRazas = serviceRaza.ConsultarDTO();
+        //    grillaPrueba.DataSource = listaRazas;
 
-            int alturaFila = grillaPrueba.RowTemplate.Height;
-            int cantidadFilas = grillaPrueba.Rows.Count;
-            grillaPrueba.Height = (alturaFila * cantidadFilas) + grillaPrueba.ColumnHeadersHeight;
-        }
+        //    int alturaFila = grillaPrueba.RowTemplate.Height;
+        //    int cantidadFilas = grillaPrueba.Rows.Count;
+        //    grillaPrueba.Height = (alturaFila * cantidadFilas) + grillaPrueba.ColumnHeadersHeight;
+        //}
 
         private void FrmConsultaRazas_Load(object sender, EventArgs e)
         {
             CargarGrillaRazas();
-            CargarGrillaRazas2();
+            //CargarGrillaRazas2();
         }
     }
 }

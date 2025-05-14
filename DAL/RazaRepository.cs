@@ -69,7 +69,9 @@ namespace DAL
             raza.Codigo = (campos[0]);
             raza.Nombre_Raza = campos[1];
             var id = int.Parse(campos[2]);
-            raza.Especie= especieRepository.Consultar().FirstOrDefault(e => e.Id ==id).Nombre;
+            var especie = especieRepository.Consultar().FirstOrDefault(e => e.Id == id);
+            raza.Especie = especie != null ? especie.Nombre : "SinEspecie";
+
            
             return raza;
         }
@@ -81,12 +83,23 @@ namespace DAL
             raza.Id = int.Parse(campos[0]);
             raza.Nombre = campos[1];
 
-            int especieId = int.Parse(campos[2]);
-            Especie especie = especieRepository.Consultar().FirstOrDefault(e => e.Id == especieId);
-            if (especie != null)
+            if (int.TryParse(campos[2], out int especieId))
             {
-                raza.AsignarEspecie(especie);
+                Especie especie = especieRepository.Consultar().FirstOrDefault(e => e.Id == especieId);
+                if (especie != null)
+                {
+                    raza.AsignarEspecie(especie);
+                }
+                else
+                {
+                    Console.WriteLine($"Advertencia: especie con ID {especieId} no encontrada para la raza con ID {raza.Id}");
+                }
             }
+            else
+            {
+                Console.WriteLine($"Error: el campo de especie no es un número válido para la raza con ID {raza.Id}");
+            }
+
 
             return raza;
         }

@@ -10,21 +10,22 @@ namespace BLL
 {
     public class RazaService : IService<Raza>
     {
-        private readonly RazaRepository repoRaza;
+        //private readonly RazaRepository repoRaza;
+        private readonly IRepository<Raza> repoRaza;
 
         public RazaService()
         {
-            repoRaza = new RazaRepository(Archivos.ARC_RAZA);
+            repoRaza = new  RazaDbRepository();
         }
 
         public List<Raza> Consultar()
         {
             return repoRaza.Consultar();
         }
-        public List<RazaDto> ConsultarDTO()
-        {
-            return repoRaza.ConsultarDTO();
-        }
+        //public List<RazaDto> ConsultarDTO()
+        //{
+        //    return repoRaza.ConsultarDTO();
+        //}
         public string Guardar(Raza entity)
         {
             try
@@ -86,10 +87,10 @@ namespace BLL
             }
         }
 
-        public List<Raza> ConsultarPorEspecie(int especieId)
-        {
-            return repoRaza.ConsultarPorEspecie(especieId);
-        }
+        //public List<Raza> ConsultarPorEspecie(int especieId)
+        //{
+        //    return repoRaza.ConsultarPorEspecie(especieId);
+        //}
 
         public Raza BuscarId(int id)
         {
